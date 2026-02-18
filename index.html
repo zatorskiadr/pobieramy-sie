@@ -51,6 +51,16 @@
 
 	  z-index: -1;
 	}
+	@media (max-width: 768px) {
+	  body::before {
+		background-size: contain; /* 🔥 pokazuje całe wierzby */
+		background-position: center top;
+	  }
+	  section {
+    margin: 30px 10px;
+    padding: 25px 15px;
+  }
+	}
 	
 	body::after {
 	  content: "";
@@ -156,13 +166,14 @@
     }
 
     nav ul {
-      list-style: none;
-      display: flex;
-      justify-content: center;
-      gap: 30px;
-      margin: 0;
-      padding: 15px 10px;
-    }
+	  list-style: none;
+	  display: flex;
+	  justify-content: center;
+	  gap: 30px;
+	  margin: 0;
+	  padding: 15px 10px;
+	  flex-wrap: wrap; /* 🔥 pozwala zawijać */
+	}
 
     nav a {
       text-decoration: none;
@@ -177,13 +188,17 @@
 
     /* ===== SEKCJE ===== */
     section {
-      max-width: 1000px;
-      margin: 60px auto;
-      padding: 40px 30px;
-      background: var(--bg-section);
-      border-radius: 12px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-    }
+	  max-width: 1000px;
+	  margin: 60px auto;
+	  padding: 40px 30px;
+
+	  background: rgba(255, 250, 243, 0.35); /* 🔥 lekka przezroczystość */
+	  backdrop-filter: blur(6px); /* 🔥 efekt szkła */
+	  -webkit-backdrop-filter: blur(6px);
+
+	  border-radius: 12px;
+	  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+	}
 
     section h2 {
       font-family: 'Playfair Display', serif;
@@ -303,6 +318,19 @@
 	  color: var(--text-main);
 	  border-color: var(--text-main);
 	}
+	
+	@media (max-width: 768px) {
+
+	  nav ul {
+		gap: 12px;
+	  }
+
+	  nav a {
+		font-size: 0.9rem;
+		padding: 6px 4px;
+	  }
+
+}
   </style>
 </head>
 <body>
@@ -530,4 +558,3 @@
 
 </body>
 </html>
-
