@@ -29,12 +29,18 @@
 	  font-family: 'Montserrat', sans-serif;
 	  color: var(--text-main);
 	  background-color: #f6f3ef;
+	  position: relative;
 	}
+	html, body {
+	  height: 100%;
+	  overflow-x: hidden;
+	}
+
 
 	/* ===== TŁO Z WIERZBAMI ===== */
 	body::before {
 		  content: "";
-		  position: fixed;
+		  position: absolute;
 		  inset: 0;
 
 		  background-image: url('images/bg-wierzby_2.png');
@@ -60,6 +66,7 @@
 	  position: relative;
 	  height: 70vh;
 	  min-height: 420px;
+	  min-height: 100svh;
 
 	  background-image: url('images/baner.jpg');
 	  background-size: cover;
@@ -315,7 +322,7 @@
 			background-repeat: no-repeat;
 
 			/* 🔥 ważne na mobile */
-			position: fixed;
+			position: absolute;
 
 			opacity: 0.35;
 		  }
