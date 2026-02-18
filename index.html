@@ -33,24 +33,19 @@
 
 	/* ===== TŁO Z WIERZBAMI ===== */
 	body::before {
-	  content: "";
-	  position: fixed;
-	  inset: 0;
+		  content: "";
+		  position: fixed;
+		  inset: 0;
 
-	  background-image: url('images/bg-wierzby_2.png');
-	  background-position: center;
-	  background-repeat: no-repeat;
+		  background-image: url('images/bg-wierzby_2.png');
+		  background-position: center;
+		  background-repeat: no-repeat;
+		  background-size: cover;
 
-	  /* 🔥 kluczowe */
-	  background-size: cover;
-	  background-repeat: no-repeat;
-	  transform: scale(1.0); /* powiększenie */
+		  opacity: 0.45;
 
-	  /* lekka mgiełka żeby tekst był czytelny */
-	  opacity: 0.45;
-
-	  z-index: -1;
-	}
+		  z-index: -1;
+		}
 	
 	body::after {
 	  content: "";
@@ -312,11 +307,18 @@
 	@media (max-width: 768px) {
 	
 	   body::before {
-		background-image: url("bg-wierzby-mobile.png"); /* 🔥 inne tło */
-		background-position: center top;
-		background-size: cover; /* wracamy do cover */
-		opacity: 0.3; /* mniej agresywne na tel */
-	  }
+			background-image: url("images/bg-wierzby-mobile.png");
+
+			/* 🔥 kluczowe */
+			background-position: center top;
+			background-size: cover;
+			background-repeat: no-repeat;
+
+			/* 🔥 ważne na mobile */
+			position: fixed;
+
+			opacity: 0.35;
+		  }
 	  
 	  nav ul {
 		gap: 12px;
