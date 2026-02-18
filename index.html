@@ -43,23 +43,13 @@
 
 	  /* 🔥 kluczowe */
 	  background-size: cover;
-	  
+	  background-repeat: no-repeat;
 	  transform: scale(1.0); /* powiększenie */
 
 	  /* lekka mgiełka żeby tekst był czytelny */
 	  opacity: 0.45;
 
 	  z-index: -1;
-	}
-	@media (max-width: 768px) {
-	  body::before {
-		background-size: contain; /* 🔥 pokazuje całe wierzby */
-		background-position: center top;
-	  }
-	  section {
-    margin: 30px 10px;
-    padding: 25px 15px;
-  }
 	}
 	
 	body::after {
@@ -320,7 +310,14 @@
 	}
 	
 	@media (max-width: 768px) {
-
+	
+	   body::before {
+		background-image: url("bg-wierzby-mobile.png"); /* 🔥 inne tło */
+		background-position: center top;
+		background-size: cover; /* wracamy do cover */
+		opacity: 0.3; /* mniej agresywne na tel */
+	  }
+	  
 	  nav ul {
 		gap: 12px;
 	  }
