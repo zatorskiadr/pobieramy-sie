@@ -71,13 +71,30 @@
 		background-size: cover;
 		background-position: center top;
 		background-repeat: no-repeat;
-		position: fixed;
+		position: absolute;   /* bylo fixed 🔥 kluczowa zmiana */
+		height: 120%;         /* 🔥 zapas wysokości */
+		min-height: 100vh;
 		opacity: 0.3;
 	  }
 	  
+	  body {
+		position: relative;
+	  }
+	  
 	  section {
-		margin: 30px 10px;
-		padding: 25px 15px;
+		margin: 30px auto;
+		padding: 25px 18px;
+		width: 92%;      /* 🔥 klucz */
+		max-width: 92%;
+	  }
+	  
+	  :root {
+		--hero-offset: 80px; /* 🔥 TU STERUJESZ */
+	  }
+
+	  .hero {
+		align-items: flex-end;  /* 🔥 tekst na dół */
+		padding-bottom: 40px;
 	  }
 
 	}	
@@ -132,6 +149,7 @@
 	/* ===== TEKST ===== */
 	.hero-content {
 	  position: relative;
+	  transform: translateY(var(--hero-offset, 0px));
 	  z-index: 3;
 
 	  text-align: center;
@@ -357,8 +375,7 @@
   </nav>
 
   <!-- ===== LICZNIK ODLICZANIA ===== -->
-  <section id="countdown" style="margin:20px auto 30px; padding:10px 20px; text-align:center; max-width:1000px;">
-    <h2 style="margin:0 0 6px;">Na naszym ślubie widzimy się już za</h2>
+  <section id="countdown" style="margin:10px auto 20px; padding:6px 12px; text-align:center; max-width:775px;">   <h2 style="margin:0 0 6px;">Na naszym ślubie widzimy się już za</h2>
     <p id="countdown-text" class="countdown-text">
       <span id="days" class="unit">–</span> dni,
       <span id="hours" class="unit">–</span> godzin,
@@ -562,4 +579,3 @@
 
 </body>
 </html>
-
