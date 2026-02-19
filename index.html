@@ -73,17 +73,17 @@
 	  
 	  body::before {
 		background-image: url("images/bg-wierzby-mobile_4.png");
-		background-size: cover; 			/* bylo cover -> contain -> cover */
-		background-position: center top; 	/* chce zrobić center bottom*/
+		background-size: cover; 				/* bylo cover -> contain -> cover */
+		background-position: center bottom; 	/* BYLO center top*/
 		background-repeat: no-repeat;
-		position: fixed;   					/* bylo fixed -> absolute -> fixed 🔥 kluczowa zmiana */
+		position: fixed;   						/* bylo fixed -> absolute -> fixed 🔥 kluczowa zmiana */
 		
-		inset: 0;         					/* nie bylo*/
-		height: 100%; 					/* bylo 100vh, a powyzej jeszcze height: 120%;  --> 2 iteracja, bylo min-height: 100%;*/
-		width: 100%;						/* nie bylo*/
+		inset: 0;         						/* nie bylo*/
+		height: 100%; 							/* bylo 100vh, a powyzej jeszcze height: 120%;  --> 2 iteracja, bylo min-height: 100%;*/
+		width: 100%;							/* nie bylo*/
 		opacity: 0.3;
 		
-		pointer-events: none;				/* nie bylo*/
+		pointer-events: none;					/* nie bylo*/
 	  }
 	  
 	  body {
