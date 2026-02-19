@@ -24,6 +24,11 @@
       box-sizing: border-box;
     }
 
+	html, body {
+	  height: 100%;
+	  overflow-x: hidden;
+	}
+
     body {
 	  margin: 0;
 	  font-family: 'Montserrat', sans-serif;
@@ -68,13 +73,17 @@
 	  
 	  body::before {
 		background-image: url("images/bg-wierzby-mobile_4.png");
-		background-size: cover;
+		background-size: contain; 		/* bylo cover */
 		background-position: center top;
 		background-repeat: no-repeat;
-		position: absolute;   /* bylo fixed 🔥 kluczowa zmiana */
-		height: 120%;         /* 🔥 zapas wysokości */
-		min-height: 100vh;
+		position: absolute;   			/* bylo fixed 🔥 kluczowa zmiana */
+		
+		inset: 0;         				/* nie bylo*/
+		min-height: 100%; 				/* bylo 100vh, a powyzej jeszcze height: 120%; */
+		width: 100%;					/* nie bylo*/
 		opacity: 0.3;
+		
+		pointer-events: none;			/* nie bylo*/
 	  }
 	  
 	  body {
@@ -89,7 +98,7 @@
 	  }
 	  
 	  :root {
-		--hero-offset: 200px; /* 🔥 TU STERUJESZ */
+		--hero-offset: 150px; /* 🔥 TU STERUJESZ */
 	  }
 
 	  .hero {
@@ -579,6 +588,3 @@
 
 </body>
 </html>
-
-
-
